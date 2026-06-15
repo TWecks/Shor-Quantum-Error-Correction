@@ -15,7 +15,10 @@ finally their combination into a single code capable of correcting both.
 
 This was as much an exploration as a presentation — the notebooks are 
 organized to reflect that progression, with each building directly on 
-the last.
+the last. There also remains, of course, room for more polish in much of 
+what I end with. Instead of reducing the code to its simplest form, 
+I elected instead to keep things in a shape where their structure was clear and
+traceable to previous expressions. With that said, I hope you enjoy!
 
 ## Notebooks
 
