@@ -17,8 +17,6 @@ This was as much an exploration as a presentation — the notebooks are
 organized to reflect that progression, with each building directly on 
 the last. 
 
-There also remains room for more polish in much of 
-the code that I end with, which was intentional. 
 Instead of reducing the error correcting code to its simplest form, which has been 
 well established by other literature and can be read about elsewhere,
 I elected instead to keep things in a shape where their structure was clear and
