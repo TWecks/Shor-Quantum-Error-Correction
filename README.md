@@ -45,11 +45,11 @@ pip install -r qiskit/requirements.txt
 
 ### Julia
 
-Located in [`julia/`](./julia). A parallel implementation of the full Shor code in Julia.
+Located in [`julia/`](./julia). A parallel implementation of the full Shor code in Julia using [QuantumClifford](https://github.com/QuantumSavory/QuantumClifford.jl), with a [Monte Carlo evaluation](https://qc.quantumsavory.org/dev/ECC_evaluating/) of the Shor decoder for random single-qubit Pauli error rates.
 
 | Notebook | Description |
 |----------|-------------|
-| `julia_shor_code.ipynb` | Full 9-qubit Shor code implementation, with performance plots benchmarking circuit execution |
+| `julia_shor_code.ipynb` | Full 9-qubit Shor code implementation, with performance benchmarking |
 
 **Setup:**
 ```bash
