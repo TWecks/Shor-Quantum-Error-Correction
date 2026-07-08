@@ -21,8 +21,17 @@ Instead of reducing the error correcting code to its simplest form (which has be
 well established by other literature and can be read about [elsewhere](https://quantum.cloud.ibm.com/learning/en/courses/foundations-of-quantum-error-correction/correcting-quantum-errors/shor-code)) I elected to keep things in a shape where their structure was clear and
 traceable from previous expressions. 
 
+I recommend viewing the julia implementation after the qiskit investigation, as it relies on some previous understanding of the Shor code and its structure in order to fully appreciate how julia is handling the error correction. Instead of rederiving the error correcting code itself, the julia notebook instead focuses on presenting a way of implementing error correcting codes and benchmarking their performance in the julia language. By doing this we are able to see some interesting strategies used in numerical methods of quantum computing simulation, and view plots of performance obtained directly from monte carlo simulations for various single-qubit error rates. 
 
 With that said, I hope you enjoy!
+
+## Background
+
+The Shor code, introduced by Peter Shor in 1995, was the first quantum 
+error correcting code capable of protecting against arbitrary single-qubit 
+errors. It works by concatenating two 3-qubit codes: an inner bit-flip 
+code and an outer phase-flip code, encoding one logical qubit across 9 
+physical qubits plus 2 ancilla qubits for syndrome extraction.
 
 ## Implementations
 
@@ -57,20 +66,15 @@ julia --project=julia -e 'using Pkg; Pkg.instantiate()'
 ```
 Then launch Jupyter with the IJulia kernel, or run the notebook directly in a Julia-aware editor (e.g. VS Code).
 
-## Background
-
-The Shor code, introduced by Peter Shor in 1995, was the first quantum 
-error correcting code capable of protecting against arbitrary single-qubit 
-errors. It works by concatenating two 3-qubit codes: an inner bit-flip 
-code and an outer phase-flip code, encoding one logical qubit across 9 
-physical qubits plus 2 ancilla qubits for syndrome extraction.
-
 ## Results
 
-Output distributions from the final Shor code circuit, run on the Aer 
+For the Qiskit investiation, output distributions from the final Shor code circuit are presented and run on the Aer 
 simulator with no noise model. Each case injects a different error onto 
 a single physical qubit; successful correction returns the output to the 
 original encoded state in all cases.
+
+In the Julia investigation, logical qubit error rate is plotted against physical 
+qubit error rate to benchmark error decoding from Shor code implementation. 
 
 
 ## References
