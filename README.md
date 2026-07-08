@@ -8,7 +8,7 @@ arbitrary single-qubit errors.
 ## Overview
 
 The goal of this project is to demonstrate how quantum error correcting 
-codes can be constructed and simulated using [Qiskit](https://github.com/Qiskit), building from 
+codes can be constructed and simulated, building from 
 simple single-error codes up to the full 9-qubit [Shor code](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.52.R2493). The 
 investigation covers bit-flip (X) errors, phase-flip (Z) errors, and 
 finally their combination into a single code capable of correcting both.
@@ -24,13 +24,38 @@ traceable from previous expressions.
 
 With that said, I hope you enjoy!
 
-## Notebooks
+## Implementations
+
+The Shor code is presented in two languages, each in its own subfolder.
+
+### Qiskit (Python)
+
+Located in [`qiskit/`](./qiskit), building from simple single-error codes up to the full 9-qubit Shor code using [Qiskit](https://github.com/Qiskit).
 
 | Notebook | Description |
 |----------|-------------|
 | `01_bit_flip_code.ipynb` | 3-qubit repetition code for correcting single bit-flip (X) errors, including syndrome extraction and Toffoli-based correction |
 | `02_phase_flip_code.ipynb` | Hadamard-rotated 3-qubit code for correcting single phase-flip (Z) errors, introducing phase kickback and ancilla preparation in the \|+⟩ state |
 | `03_full_shor_code.ipynb` | Complete 9-qubit Shor code combining both codes, with parameterized error injection and output distribution plots demonstrating successful correction |
+
+**Setup:**
+```bash
+pip install -r qiskit/requirements.txt
+```
+
+### Julia
+
+Located in [`julia/`](./julia). A parallel implementation of the full Shor code in Julia.
+
+| Notebook | Description |
+|----------|-------------|
+| `julia_shor_code.ipynb` | Full 9-qubit Shor code implementation, with performance plots benchmarking circuit execution |
+
+**Setup:**
+```bash
+julia --project=julia -e 'using Pkg; Pkg.instantiate()'
+```
+Then launch Jupyter with the IJulia kernel, or run the notebook directly in a Julia-aware editor (e.g. VS Code).
 
 ## Background
 
@@ -39,12 +64,6 @@ error correcting code capable of protecting against arbitrary single-qubit
 errors. It works by concatenating two 3-qubit codes: an inner bit-flip 
 code and an outer phase-flip code, encoding one logical qubit across 9 
 physical qubits plus 2 ancilla qubits for syndrome extraction.
-
-## Requirements
-
-```bash
-pip install qiskit qiskit-aer matplotlib numpy
-```
 
 ## Results
 
