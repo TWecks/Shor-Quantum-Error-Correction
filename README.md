@@ -49,7 +49,7 @@ Located in [`qiskit/`](./qiskit), building from simple single-error codes up to 
 
 **Setup:**
 ```bash
-pip install -r qiskit/requirements.txt
+pip install qiskit qiskit-aer
 ```
 
 ### Julia
@@ -68,7 +68,7 @@ Then launch Jupyter with the IJulia kernel, or run the notebook directly in a Ju
 
 ## Results
 
-For the Qiskit investiation, output distributions from the final Shor code circuit are presented and run on the Aer 
+For the Qiskit investigation, output distributions from the final Shor code circuit are presented and run on the Aer 
 simulator with no noise model. Each case injects a different error onto 
 a single physical qubit; successful correction returns the output to the 
 original encoded state in all cases.
